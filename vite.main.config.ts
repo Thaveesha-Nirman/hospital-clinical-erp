@@ -1,7 +1,6 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 
-// https://vitejs.dev/config
-export default defineConfig({
+export default defineConfig( {
   build: {
     lib: {
       entry: 'src/main.ts',
@@ -9,12 +8,12 @@ export default defineConfig({
       formats: ['cjs'],
     },
     rollupOptions: {
-      // ⚠️ THIS FIXES THE "CANNOT FIND MODULE" ERROR
+      // This Fixes The "CANNOT FIND MODULE" Error
       external: ['better-sqlite3', 'electron'], 
     },
   },
   resolve: {
-    // Helps locate the correct files
+    // Helps to locate the correct files
     mainFields: ['module', 'jsnext:main', 'jsnext'],
   },
 });
