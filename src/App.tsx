@@ -2,7 +2,7 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-// --- YOUR ORIGINAL PAGES ---
+
 import Login from './pages/Login';          // Your Blue/Snowfall Login
 import Dashboard from './pages/Dashboard';  // Your ORIGINAL Dashboard
 import Sidebar from './components/Sidebar'; // Your Sidebar
