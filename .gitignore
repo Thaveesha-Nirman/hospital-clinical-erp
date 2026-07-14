@@ -1,19 +1,1 @@
-# Node modules and dependencies
-node_modules/
-package-lock.json
 
-# Local Vite production builds
-dist/
-
-# Electron-builder release distributions
-release/
-out/
-
-# Local databases and caches
-*.db
-*.sqlite
-.vite/
-
-# Environment configurations
-.env
-.env.local
