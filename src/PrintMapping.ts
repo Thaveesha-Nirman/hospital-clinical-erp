@@ -65,7 +65,7 @@ export const getPrintData = (data: AdmissionFormData): Record<number, any> => {
   };
 
   // 4. EXAMINATION MEGA-GROUP LOGIC (FIELD 29)
-  // Maps General findings, CVS, Lungs, and Abdomen data
+  // Maps general findings, CVS, Lungs, and Abdomen data
   const field29 = {
     _gen: `Pale: ${data.generalExam.pale ? '+' : '-'}, Icterus: ${data.generalExam.icterus ? '+' : '-'}, Edema: ${data.generalExam.ankleEdema ? '+' : '-'}, Others: ${data.generalExam.otherFindings?.join(", ") || "None"}`,
     _cvs: `Pulse: ${data.cvs.pulse || "---"} BPM, BP: ${data.cvs.bpSys || "---"}/${data.cvs.bpDia || "---"} mmHg, Findings: ${data.cvs.otherFindings?.join(", ") || "None"}`,
@@ -106,7 +106,7 @@ export const getPrintData = (data: AdmissionFormData): Record<number, any> => {
     28: data.socialHistory,
     29: field29, // Examination Mega-Object
     30: data.opNote.content || data.managementNotes,
-    31: "Dynamic Table Data", // Handled by standard renderer
+    31: "Dynamic Table Data", 
     32: data.specialInvestigations,
     33: data.conditionAtDischarge, 
     34: data.medicationsOnDischarge,
