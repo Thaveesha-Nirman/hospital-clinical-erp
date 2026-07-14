@@ -1,11 +1,10 @@
-
 // @ts-nocheck
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
-  // ==========================================
+  // =========================================
   // 1. PATIENT OPERATIONS (CRUD)
-  // ==========================================
+  // =========================================
   
   // Fetches all patients for the Registry Table
   getPatients: () => ipcRenderer.invoke('get-patients'),
@@ -19,9 +18,9 @@ contextBridge.exposeInMainWorld('api', {
   // Deletes a patient record permanently
   deletePatient: (id) => ipcRenderer.invoke('delete-patient', id),
 
-  // ==========================================
+  // =========================================
   // 2. ADVANCED BACKUP & RESTORE
-  // ==========================================
+  // =========================================
   
   // Exports current data to a chosen JSON file
   exportDatabase: () => ipcRenderer.invoke('export-database'),
@@ -33,10 +32,11 @@ contextBridge.exposeInMainWorld('api', {
   restoreDatabase: (path) => ipcRenderer.invoke('restore-database', path),
 // Add this line inside contextBridge.exposeInMainWorld('api', { ... })
 wipeAllPatients: () => ipcRenderer.invoke('wipe-all-patients'),
-  // ==========================================
+  // =========================================
   // 3. UTILITY FUNCTIONS
-  // ==========================================
+  // =========================================
   
   // Triggers the system print dialog
   print: () => window.print()
 });
+
