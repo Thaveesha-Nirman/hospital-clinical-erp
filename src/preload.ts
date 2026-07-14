@@ -3,7 +3,7 @@ const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
   // =========================================
-  // 1. PATIENT OPERATIONS (CRUD)
+  // 1. PATIENT OPERATIONS(CRUD)
   // =========================================
   
   // Fetches all patients for the Registry Table
@@ -37,6 +37,6 @@ wipeAllPatients: () => ipcRenderer.invoke('wipe-all-patients'),
   // =========================================
   
   // Triggers the system print dialog
-  print: () => window.print()
+  print:() => window.print()
 });
 
