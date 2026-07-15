@@ -81,8 +81,8 @@ const INITIAL_INV_ROWS = [
 ];
 
 const INITIAL_FBC_LABELS = {
-  main: 'FBC', 
-  hb: 'Hb (12.0-16.0)', 
+   main: 'FBC', 
+  hb: 'Hb (13.0-16.0)', 
   wbc: 'WBC (4.0-11.0)', 
   n: 'N (2.0-7.5)', 
   l: 'L (1.0-4.0)', 
@@ -504,16 +504,6 @@ const removeRespFinding = (side, index) => {
       }
     }));
   };
-// --- OP NOTE DRUG LOGIC (MULTIPLE DRUGS) ---
-
-
-
-  // ==========================================
-  // LOAD/SAVE LOGIC
-  // ==========================================
-  
-  // 1. Load Draft
-
 
   // 2. Auto-Save
   useEffect(() => {
@@ -1075,13 +1065,7 @@ if (f.fieldNumber === 37 && formData.activeTemplates?.f37) {
             val = masterString;
         }
 
-        // History Master (23) - Handled separately via 'type'
-       // History Master (23) - UPDATED TO INCLUDE DRUG HISTORY (27)
-        // 1. DATA MAPPING: HISTORY MASTER (23) - CLEAN TITLES
-       // 1. DATA MAPPING: HISTORY MASTER (23) - INCLUDES FIELD 28
-       // 1. DATA MAPPING: HISTORY MASTER (23) - INCLUDES FIELD 28 (SOCIAL)
-        // 1. DATA MAPPING: HISTORY MASTER (23) - INCLUDES FIELD 28 (SOCIAL)
-// --- FULL DATA PREP FOR FIELD 23 ---
+      
 if (f.fieldNumber === 23) {
     const al = formData.allergies || {};
     const rem = formData.allergyRemarks || {};
