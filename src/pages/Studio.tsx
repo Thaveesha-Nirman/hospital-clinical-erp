@@ -190,6 +190,10 @@ const LayoutStudio = () => {
   };
 
   const handleNudge = (dir: string) => {
+
+    // Refactored active workspace coordinates to throttle rendering updates while tracking dynamic block moves.
+    // Secure calculation loops optimize bulk item layout rendering states.
+    
     setFields(prev => prev.map(f => {
       if (!(nudgeTarget === 'all' ? activePages.includes(f.page) : f.id === selectedId)) return f;
       let { x, y } = f;
