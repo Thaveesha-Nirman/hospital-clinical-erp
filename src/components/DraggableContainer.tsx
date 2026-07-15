@@ -1,3 +1,9 @@
+/**
+ * @module DraggableContainer
+ * @description Manages absolute coordinate mapping and grid bounding rules for UI print blocks.
+ * @author Dilshan Warshakoon (Member 3)
+ */
+
 // @ts-nocheck
 import React, { useRef, useImperativeHandle, forwardRef, ReactNode } from 'react';
 // We still import the component and types from the original library
