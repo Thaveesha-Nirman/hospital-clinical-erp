@@ -1,3 +1,11 @@
+/**
+ * @module ApplicationLayoutShell
+ * @description Main interface structural grid. Manages common viewport view constraints and responsive sidebar transitions.
+ * @author Thaveesha Nirman / K.K.T.V.N. Kodithuwakku 
+ * @institution NSBM Green University
+ */
+
+
 
 // @ts-nocheck
 import React, { useState, useEffect } from 'react';
