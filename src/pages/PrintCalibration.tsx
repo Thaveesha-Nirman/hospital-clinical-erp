@@ -1,4 +1,3 @@
-
 // @ts-nocheck
 
 import React, { useState, useRef } from 'react';
@@ -16,7 +15,6 @@ interface FieldData {
 }
 
 const initialFields: FieldData[] = [
-
   { id: 1, label: '1. Hospital Name', page: 1, x: 1220, y: 350, width: 200 },
   { id: 2, label: '2. PHN No', page: 1, x: 1800, y: 210, width: 150 },
   { id: 3, label: '3. Contact No', page: 1, x: 1800, y: 250, width: 150 },
@@ -84,23 +82,21 @@ const PrintCalibration = () => {
   };
   
   const handleResetActiveSide = () => {
-       setFields(prev => prev.map(field => {
-             if(activePages.includes(field.page)) {
-                 const initial = initialFields.find(init => init.id === field.id);
-                 return initial || field;
-             }
-             return field;
-         })
-       );
-  }
+    setFields(prev => prev.map(field => {
+      if(activePages.includes(field.page)) {
+        const initial = initialFields.find(init => init.id === field.id);
+        return initial || field;
+      }
+      return field;
+    }));
+  };
 
   const handleSaveConfig = () => {
-      console.log("Saving Configuration:", fields);
-      alert("Configuration Saved! (Check console for raw data)");
+    console.log("Saving Configuration:", fields);
+    alert("Configuration Saved! (Check console for raw data)");
   };
 
   return (
-    // Use flex-col to stack the top panel above the canvas area
     <div className="min-h-screen bg-slate-100 font-sans overflow-hidden flex flex-col">
       
       {/* ==========================================
@@ -179,7 +175,7 @@ const PrintCalibration = () => {
       </div>
 
       {/* ==========================================
-          MAIN CANVAS AREA (Occupies remaining space below top panel)
+          MAIN CANVAS AREA
       ========================================== */}
       <div className="flex-1 bg-slate-200 overflow-auto p-4 md:p-8 relative flex justify-center z-10">
           <div 
@@ -188,11 +184,9 @@ const PrintCalibration = () => {
             style={{ 
                 width: '2000px', 
                 height: '1414px',
-                
                 backgroundImage: activeTab === 'outer' 
-                  ? 'linear-gradient(to right, #e2e8f0 50%, #cbd5e1 50%)' // Grey Split (Outer)
-                  : 'linear-gradient(to right, #bfdbfe 50%, #93c5fd 50%)', // Blue Split (Inner)
-                // backgroundImage: activeTab === 'outer' ? `url(${imgOuter})` : `url(${imgInner})`,
+                  ? 'linear-gradient(to right, #e2e8f0 50%, #cbd5e1 50%)' 
+                  : 'linear-gradient(to right, #bfdbfe 50%, #93c5fd 50%)', 
                 backgroundPosition: 'center',
                 backgroundSize: '100% 100%',
                 backgroundRepeat: 'no-repeat'
@@ -212,43 +206,6 @@ const PrintCalibration = () => {
                     onDragEnd={(event, info) => {
                         const parentBounds = canvasRef.current?.getBoundingClientRect();
                         if(parentBounds) {
-                            {/* NOTE: Calculate position relative to the local 2000px canvas bounds 
-                                instead of the browser viewport coordinates. This keeps calibration 
-                                measurements accurate even if the main container is scrolled. */}
-                            const newX = info.point.x - parentBounds.left;
-                            const newY = info.point.y - parentBounds.top;
-                            handleDragEnd(field.id, newX, newY);
-                        }
-                    }}
-              {activeFields.map((field) => (
-                  <motion.div
-                    key={field.id}
-                    drag
-                    dragMomentum={false}
-                    dragElastic={0.1}
-                    dragConstraints={canvasRef}
-                    onDragEnd={(event, info) => {
-                        const parentBounds = canvasRef.current?.getBoundingClientRect();
-                        if(parentBounds) {
-                            {/* NOTE: Calculate position relative to the local 2000px canvas bounds 
-                                instead of the browser viewport coordinates. This keeps calibration 
-                                measurements accurate even if the main container is scrolled. */}
-                            const newX = info.point.x - parentBounds.left;
-                            const newY = info.point.y - parentBounds.top;
-                            handleDragEnd(field.id, newX, newY);
-                        }
-                    }}
-              {activeFields.map((field) => (
-                  <motion.div
-                    key={field.id}
-                    drag
-                    dragMomentum={false}
-                    dragElastic={0.1}
-                    dragConstraints={canvasRef}
-                    onDragEnd={(event, info) => {
-                        const parentBounds = canvasRef.current?.getBoundingClientRect();
-                        if(parentBounds) {
-                            // Calculate position relative to canvas (not screen)
                             const newX = info.point.x - parentBounds.left;
                             const newY = info.point.y - parentBounds.top;
                             handleDragEnd(field.id, newX, newY);
