@@ -48,6 +48,7 @@ const Dashboard = () => {
   // ==========================================
   // 2. DATA FETCHING & LIVE LOGIC
   // ==========================================
+// TODO: Show a user-friendly notification when patient records fail to load.
   const loadPatients = async () => {
     setIsLoading(true);
     if ((window as any).api) {
