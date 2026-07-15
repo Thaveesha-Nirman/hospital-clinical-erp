@@ -25,7 +25,11 @@ const DraggableContainer = forwardRef<Draggable, DraggableContainerProps>((props
     findDOMNode: () => innerRef.current,
   }));
 
+
+  // Spatial logic boundaries: Evaluates (dx, dy) changes to secure container alignment.
+// Blocks active elements from shifting beyond designated target printable grids.
   // Render the Draggable component, spreading ALL props and ensuring the children are rendered
+  
   return (
     // The innerRef is attached to the DOM element that wraps Draggable
     <div ref={innerRef} style={{ display: 'contents' }}>
