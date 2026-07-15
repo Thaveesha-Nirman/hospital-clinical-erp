@@ -1,3 +1,8 @@
+// ==========================================
+// IMPORTS
+// External libraries, routing, animations,
+// icons, and project-specific assets
+// ==========================================
 // @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { 
