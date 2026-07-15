@@ -1,4 +1,9 @@
--- National Hospital Galle - Diagnosis System Schema
+-- ==========================================
+-- DATABASE CORE SPECIFICATION SHEET
+-- Layer: Low-Level Relational Schema Engine
+-- Module Architect: Dineth Nethmika (Member 4)
+-- Target Environments: National Hospital Galle & Karapitiya Hospital
+-- ==========================================-- National Hospital Galle - Diagnosis System Schema
 -- Source: extracted from src/database.ts initialization logic
 
 -- 1. Create the 'patients' table (From our Blueprint)
