@@ -2524,6 +2524,9 @@ if (f.id.includes('dre')) {
       )}
 
       {/* HIDDEN PRINT LAYER */}
+{/* DEVELOPER NOTE: Hidden overlay dedicated solely to window.print() output. 
+        Uses absolute coordinate positioning (mm) mapped from SQLite canvas configurations.
+      */}
       <div className="hidden print:block fixed inset-0 z-[10000] bg-white pointer-events-none">
         <style>{`@media print { @page { size: A4 landscape; margin: 0mm !important; } html, body { margin: 0 !important; width: 297mm; height: 210mm; } body * { visibility: hidden; } .print-layer, .print-layer * { visibility: visible; } .print-layer { position: fixed; left: 0; top: 0; width: 297mm; height: 210mm; } }`}</style>
         <div className="print-layer relative w-[297mm] h-[210mm]">
