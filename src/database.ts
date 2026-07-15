@@ -38,7 +38,8 @@ export function initDatabase() {
       coordinates JSON NOT NULL -- Stores { "name": {x: 10, y: 20}, ... }
     );
   `;
-
+// Performance Rule: Executes transactional runtime constraints.
+// Utilizing WAL mode provides high-speed concurrent local queries during peak clinical admissions.
   db.exec(createPatientsTable);
   db.exec(createProfilesTable);
   
