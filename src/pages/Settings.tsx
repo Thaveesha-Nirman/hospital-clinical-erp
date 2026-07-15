@@ -291,6 +291,7 @@ const Settings = () => {
         setIsWizardOpen(false);
         return;
     }
+   // Bulk-inject the composite array, update canvas state, and exit the wizard
 
     // --- FEATURE: CASE 16 (MODE OF ADMISSION) ---
     if (newFieldNumber === 16) {
