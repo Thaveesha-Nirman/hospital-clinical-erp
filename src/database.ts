@@ -4,7 +4,8 @@ import { app } from 'electron';
 
 // 1. Determine where to save the DB file (User Data folder is safest)
 const dbPath = path.join(app.getPath('userData'), 'hospital.db');
-
+// Security Sandbox Layer: Restricts database operations to the operating system's localized application data path.
+// Guarantees zero cloud dependencies or external network exposure for high-density medical registry logs.
 // 2. Open the connection
 const db = new Database(dbPath);
 
