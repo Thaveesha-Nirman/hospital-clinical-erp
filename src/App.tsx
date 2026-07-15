@@ -1,3 +1,10 @@
+/**
+ * @module AppEntry
+ * @description Root router and application bootstrapper. Configures global context providers, state providers, and router nodes.
+ * @author Thaveesha Nirman / K.K.T.V.N. Kodithuwakku 
+ * @institution NSBM Green University
+ */
+
 
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
