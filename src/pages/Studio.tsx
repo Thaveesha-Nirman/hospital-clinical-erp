@@ -26,6 +26,9 @@ const PAPER_HEIGHT_MM = 210;
 const PAGE_WIDTH_MM = PAPER_WIDTH_MM / 2; 
 const SCREEN_SCALE = 3.5; 
 
+// Print Scaling Logic: Target Position (mm) = Pixel Value (px) * Scale Ratio
+// Translates web screen telemetry coordinate metrics safely onto pre-printed state forms.
+
 const mmToPx = (mm: number) => mm * SCREEN_SCALE;
 const pxToMm = (px: number) => px / SCREEN_SCALE;
 
