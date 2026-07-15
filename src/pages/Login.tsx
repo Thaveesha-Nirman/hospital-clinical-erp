@@ -159,6 +159,7 @@ const Login = () => {
                     </label>
                 </div>
             </div>
+{/* TODO: Add aria-live support so login errors are announced to screen-reader users. */}
 
             {error && (
                 <div className="animate-entry delay-3 flex items-center gap-2 text-red-600 bg-red-50/80 p-4 rounded-xl text-sm font-bold animate-pulse border border-red-100">
