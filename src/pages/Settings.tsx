@@ -1,6 +1,8 @@
 
 
-
+// --- ICONS ---
+// Includes: Actions (Save, Print), Navigation (Arrows, Chevrons), 
+// Canvas Tools (MousePointer, BoxSelect, Scaling), and Node Types (Type, Image, Binary)
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import { motion, AnimatePresence } from 'framer-motion';
