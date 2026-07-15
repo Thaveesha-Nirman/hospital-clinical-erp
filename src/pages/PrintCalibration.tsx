@@ -5,18 +5,7 @@ import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Settings, Save, Move, Layers, ArrowLeftRight, ArrowUpDown, RotateCcw } from 'lucide-react';
 
-// ==========================================
-// 1. IMPORT YOUR 2 COLLAGE IMAGES
-// ==========================================
-// IMPORTANT: You must solve the TypeScript image import issue locally.
-// For now, I'm commenting these out so the code compiles for you.
-// Uncomment these and fix your vite-env.d.ts to use the real images.
-// import imgOuter from '../assets/outer.jpg';
-// import imgInner from '../assets/inner.jpg';
 
-// ==========================================
-// 2. DATA DEFINITION
-// ==========================================
 interface FieldData {
   id: number;
   label: string;
@@ -26,10 +15,8 @@ interface FieldData {
   width: number;
 }
 
-// Initial positions based on a 2000px wide canvas.
-// You will need to drag these to the perfect spots and update these numbers later.
 const initialFields: FieldData[] = [
-  // PAGE 1 FIELDS (Right side of Outer)
+
   { id: 1, label: '1. Hospital Name', page: 1, x: 1220, y: 350, width: 200 },
   { id: 2, label: '2. PHN No', page: 1, x: 1800, y: 210, width: 150 },
   { id: 3, label: '3. Contact No', page: 1, x: 1800, y: 250, width: 150 },
@@ -201,8 +188,7 @@ const PrintCalibration = () => {
             style={{ 
                 width: '2000px', 
                 height: '1414px',
-                // === SAFE MODE BACKGROUNDS (COLORS INSTEAD OF IMAGES) ===
-                // Once you fix your image imports, uncomment the image line below.
+                
                 backgroundImage: activeTab === 'outer' 
                   ? 'linear-gradient(to right, #e2e8f0 50%, #cbd5e1 50%)' // Grey Split (Outer)
                   : 'linear-gradient(to right, #bfdbfe 50%, #93c5fd 50%)', // Blue Split (Inner)
