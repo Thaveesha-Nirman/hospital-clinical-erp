@@ -1,11 +1,4 @@
 
-/**
- * =================================================================================
- * HOSPITAL DIAGNOSIS CARD SYSTEM - PRINT DATA BRIDGE (V25.2.4)
- * =================================================================================
- * Managed by: Kodithuwakku K K T V N (Project 36682)
- * Institution: National Hospital Galle
- */
 
 export interface AdmissionFormData {
   hospitalName: string;
