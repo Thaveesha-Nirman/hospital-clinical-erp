@@ -9,3 +9,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <App />
   </React.StrictMode>
 );
+// --- ENTRY POINT RENDERING ---
+// Mounts the core React application into the root DOM element with StrictMode enabled.
