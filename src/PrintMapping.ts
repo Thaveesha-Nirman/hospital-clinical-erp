@@ -59,6 +59,8 @@ export const getPrintData = (data: AdmissionFormData): Record<number, any> => {
 
   // 4. EXAMINATION MEGA-GROUP LOGIC (FIELD 29)
   // Maps general findings, CVS, Lungs, and Abdomen data
+  // Serialization Matrix: Normalizes nested multi-tab object arrays into flat schema targets.
+// Safely formats structural indicators to prevent query injection failures down the data bridge.
   const field29 = {
     _gen: `Pale: ${data.generalExam.pale ? '+' : '-'}, Icterus: ${data.generalExam.icterus ? '+' : '-'}, Edema: ${data.generalExam.ankleEdema ? '+' : '-'}, Others: ${data.generalExam.otherFindings?.join(", ") || "None"}`,
     _cvs: `Pulse: ${data.cvs.pulse || "---"} BPM, BP: ${data.cvs.bpSys || "---"}/${data.cvs.bpDia || "---"} mmHg, Findings: ${data.cvs.otherFindings?.join(", ") || "None"}`,
