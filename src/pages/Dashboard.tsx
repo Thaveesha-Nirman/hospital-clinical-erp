@@ -126,7 +126,7 @@ const Dashboard = () => {
       setShowWipeWarning(false);
       setTimeout(() => selectAction('BACKUP'), 250); 
   };
-// TODO: Replace hardcoded admin credentials with secure backend authentication before production deployment.
+
   const verifyAdmin = () => {
       if (adminCreds.id === 'admin' && adminCreds.pass === 'admin123') {
           setShowAuthModal(false); 
@@ -228,12 +228,7 @@ const letterColors = {
   z: 'bg-lime-100 text-lime-700',
 };
 
-  // ==========================================
-  // 5. CALCULATIONS & FILTERING (FIXED DATA MAPPING)
-  // ==========================================
- // ==========================================
-  // 5. CALCULATIONS & FILTERING (BULLETPROOF)
-  // ==========================================
+
   const filteredPatients = patients.filter((p: any) => {
     // This looks for ANY possible name key so the name never disappears
     const name = (p.patient_name || p.patientName || p.name || "").toString().toLowerCase();
@@ -399,7 +394,7 @@ const letterColors = {
           LAYER 4: MODALS (DATA CENTER, AUTH, BACKUP, RESTORE, WIPE, DELETE)
           =================================================================== */}
 
-      {/* 1. SELECTION MENU (DATA CENTER) */}
+     
       <AnimatePresence>
         {showManageMenu && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-md p-4">
