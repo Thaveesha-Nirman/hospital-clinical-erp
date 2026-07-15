@@ -88,6 +88,33 @@ const INITIAL_FBC_LABELS = {
   l: 'L (1.0-4.0)', 
   plt: 'PLT (150-400)'
 };
+// ==========================================
+// ARCHITECT CORNER: DYNAMIC NIC AGE CALCULATOR
+// Engineered by: Thaveesha Nirman
+// ==========================================
+export const calculateAgeFromNIC = (nicString: string): number | null => {
+  if (!nicString || nicString.trim() === '') return null;
+  try {
+    const cleanNIC = nicString.trim();
+    let birthYear = 0;
+
+    if (cleanNIC.length === 10) {
+      birthYear = parseInt("19" + cleanNIC.substring(0, 2), 10);
+    } else if (cleanNIC.length === 12) {
+      birthYear = parseInt(cleanNIC.substring(0, 4), 10);
+    } else {
+      return null;
+    }
+
+    const currentYear = new Date().getFullYear();
+    const computedAge = currentYear - birthYear;
+    return computedAge > 0 && computedAge < 120 ? computedAge : null;
+  } catch (error) {
+    console.error("Age calculation error:", error);
+    return null;
+  }
+};
+
 
 const Admission = () => {
   const navigate = useNavigate();
