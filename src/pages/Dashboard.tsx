@@ -126,7 +126,11 @@ const Dashboard = () => {
       setShowWipeWarning(false);
       setTimeout(() => selectAction('BACKUP'), 250); 
   };
-
+// TODO: Replace hardcoded admin credentials with secure backend authentication before production deployment.
+  /* DEVELOPER NOTE: Local authentication gatekeeper for database operations.
+    Acts as a secondary check prior to performing high-risk system updates 
+    including backup exports, system restores, or database wipes.
+  */
   const verifyAdmin = () => {
       if (adminCreds.id === 'admin' && adminCreds.pass === 'admin123') {
           setShowAuthModal(false); 
