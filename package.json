@@ -1,4 +1,8 @@
-
+// =========================================================================
+// BUILD & PACKAGING CONFIGURATION SYSTEM
+// Designed & Engineered by: Thaveesha Nirman 
+// Coordinates development and production compiler parameters for Electron integration.
+// =========================================================================
 {
   "name": "diagnosis-system",
   "productName": "National Hospital Galle - Diagnosis System",
