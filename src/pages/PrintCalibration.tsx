@@ -212,6 +212,42 @@ const PrintCalibration = () => {
                     onDragEnd={(event, info) => {
                         const parentBounds = canvasRef.current?.getBoundingClientRect();
                         if(parentBounds) {
+                            {/* NOTE: Calculate position relative to the local 2000px canvas bounds 
+                                instead of the browser viewport coordinates. This keeps calibration 
+                                measurements accurate even if the main container is scrolled. */}
+                            const newX = info.point.x - parentBounds.left;
+                            const newY = info.point.y - parentBounds.top;
+                            handleDragEnd(field.id, newX, newY);
+                        }
+                    }}
+              {activeFields.map((field) => (
+                  <motion.div
+                    key={field.id}
+                    drag
+                    dragMomentum={false}
+                    dragElastic={0.1}
+                    dragConstraints={canvasRef}
+                    onDragEnd={(event, info) => {
+                        const parentBounds = canvasRef.current?.getBoundingClientRect();
+                        if(parentBounds) {
+                            {/* NOTE: Calculate position relative to the local 2000px canvas bounds 
+                                instead of the browser viewport coordinates. This keeps calibration 
+                                measurements accurate even if the main container is scrolled. */}
+                            const newX = info.point.x - parentBounds.left;
+                            const newY = info.point.y - parentBounds.top;
+                            handleDragEnd(field.id, newX, newY);
+                        }
+                    }}
+              {activeFields.map((field) => (
+                  <motion.div
+                    key={field.id}
+                    drag
+                    dragMomentum={false}
+                    dragElastic={0.1}
+                    dragConstraints={canvasRef}
+                    onDragEnd={(event, info) => {
+                        const parentBounds = canvasRef.current?.getBoundingClientRect();
+                        if(parentBounds) {
                             // Calculate position relative to canvas (not screen)
                             const newX = info.point.x - parentBounds.left;
                             const newY = info.point.y - parentBounds.top;
