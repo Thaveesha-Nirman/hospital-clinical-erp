@@ -1,3 +1,11 @@
+/**
+ * @module ElectronMainframe
+ * @description Orchestrates the desktop application runtime, window lifecycle, and secure IPC communication bridges.
+ * @author Thaveesha Nirman / K.K.T.V.N. Kodithuwakku (Lead Architect)
+ * @institution NSBM Green University
+ */
+
+
 import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
 import sqlite3 from 'sqlite3';
