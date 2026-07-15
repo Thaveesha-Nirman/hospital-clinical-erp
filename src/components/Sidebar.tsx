@@ -1,3 +1,13 @@
+/**
+ * @file Sidebar.jsx
+ * @description Application sidebar navigation component.
+ * 
+ * @contribution
+ * Added the "Saved Layouts" navigation menu option using the `FileText` icon 
+ * from lucide-react. This feature integrates access to saved template designs 
+ * within the printer interface while ensuring the dynamic tracking pill 
+ * automatically updates based on the expanded menu route matching.
+ */
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
