@@ -4,7 +4,7 @@
 -- Module Architect: Dineth Nethmika (Member 4)
 -- Target Environments: National Hospital Galle & Karapitiya Hospital
 -- ==========================================-- National Hospital Galle - Diagnosis System Schema
--- Source: extracted from src/database.ts initialization logic
+-- Source: extracted from src/database.ts initialization logics
 
 -- 1. Create the 'patients' table (From our Blueprint)
 CREATE TABLE IF NOT EXISTS patients (
