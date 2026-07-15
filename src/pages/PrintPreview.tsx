@@ -32,6 +32,12 @@ const PrintPreview = () => {
                   <Printer /> PRINT CARD
               </button>
           </div>
+        {/* THE PAPER */}
+          {/* NOTE: The fixed dimensions (210mm x 297mm) match standard A4 paper sizes.
+            The 'print:' utility classes from Tailwind handle the responsive visibility 
+            and color overrides specifically when the browser triggers the print dialog.
+          */}
+          <div className="flex-1 overflow-auto bg-slate-500 p-8 print:p-0 print:bg-white flex justify-center">
 
           {/* THE PAPER */}
           <div className="flex-1 overflow-auto bg-slate-500 p-8 print:p-0 print:bg-white flex justify-center">
