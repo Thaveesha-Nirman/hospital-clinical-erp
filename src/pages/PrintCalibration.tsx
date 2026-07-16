@@ -1,3 +1,10 @@
+// Core logic:
+// - Load default field coordinates
+// - Allow drag-and-drop positioning
+// - Support global X/Y adjustments
+// - Reset active layout
+// - Save updated calibration settings
+
 // @ts-nocheck
 
 import React, { useState, useRef } from 'react';
