@@ -1,3 +1,11 @@
+// ============================================================================
+// PrintPreview.tsx
+// Professional A4 print preview page for the Hospital Diagnosis Card System.
+// Displays patient admission details in a clean printable layout with
+// print and navigation controls. Designed using React, TypeScript,
+// Tailwind CSS, and React Router.
+// ============================================================================
+
 // @ts-nocheck
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
